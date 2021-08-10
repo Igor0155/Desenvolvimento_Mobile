@@ -1,101 +1,129 @@
-// Entrada de dados
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 main() => runApp(MaterialApp(
-  home: Entradas(),
-  debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
+      home: Gesture(),
+    ));
 
-));
-
-class Entradas extends StatefulWidget {
+class Gesture extends StatefulWidget {
   @override
-  _EntradasState createState() => _EntradasState();
+  _GestureState createState() => _GestureState();
 }
 
-class _EntradasState extends State<Entradas> {
+class _GestureState extends State<Gesture> {
 
-  // Iniciando um controlador // _textEditingController = variavel pode colocar qualquer nome
-  TextEditingController _textEditingController = new TextEditingController();
+  String _personagem = '';
+  var _imagem = AssetImage('images/image.png');
 
-  // Dados da saída
-  String _resposta = 'Resultado';
+  personagemEscolhido(String personagem){
 
-  void recuperarValor(){
-    setState(() {
-      _resposta = _textEditingController.text;
-    });
+    if (personagem == 'joao'){
+      _personagem = 'Você escolheu o João!';
+      _imagem = AssetImage('images/jo.png');
+    }
+    else if(personagem == 'maria' ){
+      _personagem = 'Você escolheu a Juliana!';
+      _imagem = AssetImage('images/ma.png');
+    }
+    else{
+      _personagem = 'Você escolheu o José!';
+      _imagem = AssetImage('images/jos.png');
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
-        title: Text('Entrada de dados'),
-        backgroundColor: Colors.blueAccent,
+        title: Text('Gesture App'),
+        backgroundColor: Color(0xffcd853f),
       ),
+      body: Padding(
+        padding: EdgeInsets.all(20),
 
-      body: Column(
-        children: [
-          Padding(
-              padding: EdgeInsets.all(20),
+        // Primeiro uma coluna
+        child: Column(
+          children: [
+            // Agora uma row
+            Row(
 
-            // Entrada (input)
-            child: TextField(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
-              // TextInputType.text, .number, .emailAdress
-              keyboardType: TextInputType.text,
-
-              // Informação para o usuário
-              decoration: InputDecoration(
-                labelText: 'Digite alguma coisa'
-              ),
-
-              // Habilitando e desabilitando um campo
-              enabled: true,
-
-              // Tamamanho maximo dos campos
-              maxLength: 5,
-
-              // Controlador do maxlength
-              // enforced: Não deixa passar da quantidade de digitos
-              // pré-determinado
-              // none: Libera a digitação com aviso visual
-              maxLengthEnforcement: MaxLengthEnforcement.none,
-
-              // Estilo para o inputText
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.green,
-              ),
-
-              // Escondendo o texto (password)
-              obscureText: false, // TRUE / FALSE
-
-              // Pegar o valor // _textEditingController = variavel pode colocar qualquer nome
-              controller: _textEditingController,
-
+              children: [
+                // Detecção de toque na tela
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      personagemEscolhido('joao');
+                    });
+                  },
+                  child: Image.asset(
+                    'images/joao.png',
+                    width: 100,
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      personagemEscolhido('maria');
+                    });
+                  },
+                  child: Image.asset(
+                    'images/maria.png',
+                    width: 100,
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      personagemEscolhido('jose');
+                    });
+                  },
+                  child: Image.asset(
+                    'images/jose.png',
+                    width: 100,
+                  ),
+                ),
+              ],
             ),
-          ),
-
-          ElevatedButton(
-              onPressed: recuperarValor,
-              child: Text('Salvar'),
-          ),
-
-          Padding(
-              padding: const EdgeInsets.only(top: 20),
-            child: Text(
-              _resposta,
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.blueGrey
+            // Mais uma coluna
+            Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: Column(
+                children: [
+                  Text(
+                    'Escolha um personagem',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      top: 20,
+                      bottom: 20,
+                    ),
+                    child: Column(
+                      children: [
+                        Image(
+                          image: _imagem,
+                          width: 100,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                      padding: EdgeInsets.only(top: 20),
+                    child: Text(
+                      _personagem ,
+                      style: TextStyle(
+                        fontSize: 30,
+                        color: Colors.orange,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
