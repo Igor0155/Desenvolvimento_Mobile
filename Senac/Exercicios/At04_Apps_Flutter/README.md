@@ -1,6 +1,7 @@
-# exercicio_02
+# Exercicio_02
 
-A new Flutter project.
+* [1 Apicativo Sorteio MegaSena]()
+* [2 Aplicativo Jokenpo]()
 
 ## Getting Started
 
