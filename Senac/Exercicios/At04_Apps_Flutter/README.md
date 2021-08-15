@@ -1,7 +1,7 @@
 # Exercicio_02
 
 * [1 Apicativo Sorteio MegaSena]()
-* [2 Aplicativo Jokenpo]()
+* [2 Aplicativo Jokenpo](https://github.com/Igor0155/Desenvolvimento_Mobile/blob/main/Senac/Exercicios/At04_Apps_Flutter/lib/main_Jokenpo.dart)
 
 ## Getting Started
 
