@@ -3,7 +3,7 @@
 
 
 * [01 Apicativo de Media Aritimetica](https://github.com/Igor0155/Desenvolvimento_Mobile/blob/main/Senac/Exercicios/At03_App_Flutter/lib/main_media.dart)
-* [02 Aplicativo de Peso Ideal]()
+* [02 Aplicativo de Peso Ideal](https://github.com/Igor0155/Desenvolvimento_Mobile/blob/main/Senac/Exercicios/At03_App_Flutter/lib/main_peso_Ideal.dart)
 
 
 
