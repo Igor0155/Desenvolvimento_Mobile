@@ -2,9 +2,9 @@
 
 A new Flutter project.
 
-Imagem 01 App
+01 Apicativo de Media Aritimetica 
+02 Aplicativo de Peso Ideal
 
-![Screenshot_1628453964](https://user-images.githubusercontent.com/78672215/128792497-a96fe358-ba3e-40b9-89e7-e52cedb6f1d9.png)
 
 
 ## Getting Started
