@@ -1,9 +1,9 @@
 # exercicio_01
 
-A new Flutter project.
 
-01 Apicativo de Media Aritimetica 
-02 Aplicativo de Peso Ideal
+
+* 01 Apicativo de Media Aritimetica 
+* 02 Aplicativo de Peso Ideal
 
 
 
