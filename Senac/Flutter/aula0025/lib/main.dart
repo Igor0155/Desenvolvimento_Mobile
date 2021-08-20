@@ -2,127 +2,81 @@ import 'package:flutter/material.dart';
 
 main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Gesture(),
+      home: Home(),
+
+      // Rotas
+      initialRoute: '/',
+      routes: {
+        '/servicos': (context) => Servicos(),
+      },
     ));
 
-class Gesture extends StatefulWidget {
+class Home extends StatefulWidget {
   @override
-  _GestureState createState() => _GestureState();
+  _HomeState createState() => _HomeState();
 }
 
-class _GestureState extends State<Gesture> {
-
-  String _personagem = '';
-  var _imagem = AssetImage('images/image.png');
-
-  personagemEscolhido(String personagem){
-
-    if (personagem == 'joao'){
-      _personagem = 'Você escolheu o João!';
-      _imagem = AssetImage('images/jo.png');
-    }
-    else if(personagem == 'maria' ){
-      _personagem = 'Você escolheu a Juliana!';
-      _imagem = AssetImage('images/ma.png');
-    }
-    else{
-      _personagem = 'Você escolheu o José!';
-      _imagem = AssetImage('images/jos.png');
-    }
-  }
-
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Gesture App'),
-        backgroundColor: Color(0xffcd853f),
+        title: Text('Tela Principal'),
+        backgroundColor: Colors.black,
       ),
-      body: Padding(
-        padding: EdgeInsets.all(20),
-
-        // Primeiro uma coluna
+      body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Agora uma row
-            Row(
-
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-              children: [
-                // Detecção de toque na tela
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      personagemEscolhido('joao');
-                    });
+            SizedBox(
+              height: 50,
+              width: 200,
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/servicos');
                   },
-                  child: Image.asset(
-                    'images/joao.png',
-                    width: 100,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      personagemEscolhido('maria');
-                    });
-                  },
-                  child: Image.asset(
-                    'images/maria.png',
-                    width: 100,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      personagemEscolhido('jose');
-                    });
-                  },
-                  child: Image.asset(
-                    'images/jose.png',
-                    width: 100,
-                  ),
-                ),
-              ],
-            ),
-            // Mais uma coluna
-            Padding(
-              padding: EdgeInsets.only(top: 20),
-              child: Column(
-                children: [
-                  Text(
-                    'Escolha um personagem',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      top: 20,
-                      bottom: 20,
-                    ),
-                    child: Column(
-                      children: [
-                        Image(
-                          image: _imagem,
-                          width: 100,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                      padding: EdgeInsets.only(top: 20),
-                    child: Text(
-                      _personagem ,
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: Colors.orange,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+                  child: Text('Ir pra Serviços')),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class Servicos extends StatefulWidget {
+  const Servicos({Key? key}) : super(key: key);
+
+  @override
+  _ServicosState createState() => _ServicosState();
+}
+
+class _ServicosState extends State<Servicos> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.blueGrey,
+      appBar: AppBar(
+        title: Text('Tela Serviços'),
+        backgroundColor: Colors.black,
+      ),
+      body: Center(
+        child: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 50,
+                width: 200,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text('Voltar'),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
