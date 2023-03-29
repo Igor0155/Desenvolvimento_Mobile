@@ -8,9 +8,24 @@ void main() {
   String cor = 'Verde amarela';
   String sabor = "Doce e citrica";
   int diasColheita = 30;
+
+  Legumes mandioca1 = Legumes("Macaxeira", 1200.0, "Marrom", true);
+  Fruta banana1 = Fruta("Banana", 200.0, "Amarela", "Doce", 12);
+  Nozes macadamia1 = Nozes("Macadâmia", 300.0, "Branco", "Doce", 20, 35.0);
+  Citricas limao1 = Citricas("Limão", 20.0, "Verde", "Azedo", 5, 10);
+/*
+  macadamia1.printAlimentos();
+  mandioca1.printAlimentos();
+  banana1.printAlimentos();
+  limao1.printAlimentos();
+  mandioca1.cozinhar();
+*/
+  banana1.separarIngredientes();
+
+  macadamia1.fazerMassa();
 }
 
-class Fruta extends Alimento {
+class Fruta extends Alimento implements Bolo {
   String sabor;
   int diasDesdeColheita;
   bool? isMadura;
@@ -29,6 +44,21 @@ class Fruta extends Alimento {
   void fazerSuco() {
     print('Você está faznendo suco de $nome');
   }
+
+  @override
+  void separarIngredientes() {
+    print('Pegar a $nome ');
+  }
+
+  @override
+  void fazerMassa() {
+    print('Misturar frutas com os ingredientes');
+  }
+
+  @override
+  void assar() {
+    print('Colocar no forno');
+  }
 }
 
 class Alimento {
@@ -44,7 +74,7 @@ class Alimento {
 }
 
 //"extends" Pegando herança da classe Alimento
-class Legumes extends Alimento {
+class Legumes extends Alimento implements Bolo {
   bool isPrecisaCozinhar;
 
   //"super" é referenciar(Chamar) a class Pai(Alimento)
@@ -58,6 +88,17 @@ class Legumes extends Alimento {
       print('Não precisa cozinhar');
     }
   }
+
+  @override
+  void assar() {
+    // TODO: implement assar
+  }
+
+  @override
+  void fazerMassa() {}
+
+  @override
+  void separarIngredientes() {}
 }
 
 class Citricas extends Fruta {
@@ -65,7 +106,7 @@ class Citricas extends Fruta {
 
   Citricas(String nome, double peso, String cor, String sabor,
       int diasDesdeColheita, this.nivelAzedo)
-      : super(nome, cor, peso, sabor, diasDesdeColheita);
+      : super(nome, peso, cor, sabor, diasDesdeColheita);
 
   void existeRefri(bool existe) {
     if (existe) {
@@ -77,7 +118,19 @@ class Citricas extends Fruta {
 }
 
 class Nozes extends Fruta {
+  double porcentagemOleoNatural;
 
-  double
-  
+  Nozes(String nome, double peso, String cor, String sabor,
+      int diasDesdeColheita, this.porcentagemOleoNatural)
+      : super(nome, peso, cor, sabor, diasDesdeColheita);
+}
+
+//Class abstrata
+abstract class Bolo {
+  //Separar
+  void separarIngredientes();
+
+  void fazerMassa();
+
+  void assar();
 }
