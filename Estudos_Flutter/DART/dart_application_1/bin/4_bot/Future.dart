@@ -5,7 +5,7 @@ void main() {
   ///com isso ela executa os outros codigos e quando chega no final dela
   ///a main execuat o Future
   //Future myFuture = Future(() {
-  //  print('Estamos na Future');
+  //  print('Estamos na Future');cc
   //  return 21;
   //}).then((value) => print('o valor é $value'));
 
