@@ -1,15 +1,15 @@
-import 'package:test/expect.dart';
+//import 'package:test/expect.dart';
 
 void main() {
   ///Future a main ebntende que esse objetro demora mais para ser executado
   ///com isso ela executa os outros codigos e quando chega no final dela
   ///a main execuat o Future
   //Future myFuture = Future(() {
-  //  print('Estamos na Future');
+  //  print('Estamos na Future');cc
   //  return 21;
   //}).then((value) => print('o valor é $value'));
 
-  //Future.delayed(Duration(seconds: 5));
+  //Future.delayed(Duration(seconds: 5)); ss
 
   ///função tipo future
   ///<> indica qual tipo esse func vai pegar/esperar/ser
