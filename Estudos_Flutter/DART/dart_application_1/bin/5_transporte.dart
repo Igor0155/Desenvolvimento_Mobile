@@ -39,6 +39,7 @@ void escolherTransporte(Transporte locomocao) {
       return print('Vou de Carro para aventura');
 
     case Transporte.bike:
+      return print('Vou de Carro para aventura');
 
     case Transporte.skate:
       break;
