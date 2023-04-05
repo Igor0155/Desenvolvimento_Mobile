@@ -37,17 +37,32 @@ void main() {
 
 void functionOne() {
   print('Iniciando F01');
-  functionTwo();
+
+  try {
+    functionTwo();
+  } on FormatException {
+    print('Foi capturada dentro da functionTwo');
+  }
   print('Finalizando F01');
 }
 
 void functionTwo() {
   print('Iniciando F02');
   for (var i = 0; i <= 5; i++) {
+    // try {
+    //   double amount = double.parse('Not number');
+    // } on FormatException {
+    //   print('A conversão não pode ser feita');
+    // }
+
+    double amount = double.parse('Not number');
+
     print(i);
   }
   print('Finalizando F01');
 }
+
+
 
 
 // recursiveFun(int count) {
