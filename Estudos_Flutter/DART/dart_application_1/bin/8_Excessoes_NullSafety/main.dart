@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'controllers/bank_controller.dart';
 import 'models/account.dart';
 
@@ -26,46 +28,17 @@ import 'models/account.dart';
 // }
 
 void main() {
-  // double amount = double.parse('12,35');
-  // recursiveFun(1);
-
-  print('Começando a Main');
-  functionOne();
-
-  print('Main terminou');
-}
-
-void functionOne() {
-  print('Iniciando F01');
+  // throw FormatException();
+  // print(Account(name: 'John Wick', balance: 500, isAuthenticated: true));
 
   try {
-    functionTwo();
-  } on FormatException {
-    print('Foi capturada dentro da functionTwo');
+    testeFunc();
+  } on Exception catch (e, stackTrace) {
+    print(e);
+    print(stackTrace);
   }
-  print('Finalizando F01');
 }
 
-void functionTwo() {
-  print('Iniciando F02');
-  for (var i = 0; i <= 5; i++) {
-    // try {
-    //   double amount = double.parse('Not number');
-    // } on FormatException {
-    //   print('A conversão não pode ser feita');
-    // }
-
-    double amount = double.parse('Not number');
-
-    print(i);
-  }
-  print('Finalizando F01');
+void testeFunc() {
+  throw Account(name: 'John Wick', balance: 500, isAuthenticated: true);
 }
-
-
-
-
-// recursiveFun(int count) {
-//   print(count + 1);
-//   recursiveFun(count + 1);
-// }
