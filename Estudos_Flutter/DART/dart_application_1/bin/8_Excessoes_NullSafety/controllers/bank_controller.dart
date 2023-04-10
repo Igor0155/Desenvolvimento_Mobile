@@ -1,6 +1,6 @@
 import 'package:test/expect.dart';
 
-import '../exceptions/banck_controller_exceptions.dart';
+import '../exceptions/bank_controller_exceptions.dart';
 import '../models/account.dart';
 
 class BankController {
