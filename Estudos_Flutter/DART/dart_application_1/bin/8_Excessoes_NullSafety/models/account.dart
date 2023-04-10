@@ -8,7 +8,7 @@ class Account {
       required this.balance,
       required this.isAuthenticated})
       : assert(name.isNotEmpty, "O nome não pode ser uma String Vazia"),
-        assert(balance < 0, "O saldo não pode ser negativo");
+        assert(balance < 0, "O saldo não pode ser negativ");
 
   editBalance({required value}) {
     balance = balance + value;
