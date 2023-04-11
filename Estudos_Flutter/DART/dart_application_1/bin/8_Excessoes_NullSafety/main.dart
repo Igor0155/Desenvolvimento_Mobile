@@ -18,7 +18,7 @@ void testingNullSafety() {
 
   print(myAccount.runtimeType);
 
-  // Não funciona aqui
+  // Não funciona aqui(teste forçado)
   // print(myAccount.balance);
 
   //'!' Força pegar um valor, mesmo que ele pode receber nulo
@@ -31,7 +31,7 @@ void testingNullSafety() {
   //   print('Conta Nula');
   // }
 
-  //if else compactado:
+  //if else compactado: operador ternario
   //    Se Cont != null '?' = true   ':' = false
   print(myAccount != null ? myAccount.balance : "Conta Nula");
 
