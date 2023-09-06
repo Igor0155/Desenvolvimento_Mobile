@@ -12,4 +12,6 @@ export const cores = {
     escuro: '#555555',
     claro: '#FFF',
     cinza: '#C7C7C7',
+    laranjaClaro:'#F59E65',
+    laranjaMedio: '#F38841'
 }

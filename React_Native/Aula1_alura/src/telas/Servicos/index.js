@@ -1,8 +1,15 @@
-import { StatusBar } from "expo-status-bar";
+
 import React from "react";
 
-import { SafeAreaView, Text, FlatList } from 'react-native';
+import {
+
+    FlatList,
+
+} from 'react-native';
+
+import TelaPadrao from "../../componentes/TelaPadrao";
 import Item from "./Item";
+
 
 
 
@@ -20,7 +27,7 @@ const servicos = [
         id: 2,
         nome: 'Tosa',
         preco: 80.7,
-        descricao: 'tosamos o seu gato e cão',
+        descricao: 'Tosamos o seu gato e cão',
     },
     {
         id: 3,
@@ -30,17 +37,15 @@ const servicos = [
     }
 ]
 
-// SafeAreaView funciona apenas para o IOS (Safe da margem inferior e superior)
-//StatusBar serve para ANdroid (Mesma função do SafeAreaView)
+
 export default function Servicos() {
-    return <SafeAreaView>
-        <StatusBar />
-        <Text> Serviços! </Text>
-        <FlatList 
-        data={servicos}
-        //exibir uma variavel usa {} | mostar item da lista na tela
-        renderItem={({item}) => <Item {...item} />} 
-        keyExtractor ={({id}) => String(id)}
+
+    return <>
+        <FlatList
+            data={servicos}
+            //exibir uma variavel usa {} | mostar item da lista na tela
+            renderItem={({ item }) => <Item {...item} />}
+            keyExtractor={({ id }) => String(id)}
         />
-    </SafeAreaView>
+    </>
 }
