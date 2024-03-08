@@ -22,6 +22,18 @@ var name = 'Igor';
 String msm({@meta.required String? sugeito, @meta.required String? msg}) =>
     "$msg $sugeito";
 
+//Classe
+
+// Classes
+// @meta.Immutable() Impede que os parametros sejá imutaveus (Da erro)
+@meta.Immutable()
+class UserModel {
+  final String name;
+  final String age;
+
+  UserModel(this.name, this.age);
+}
+
 main() {
   print('teste');
 
