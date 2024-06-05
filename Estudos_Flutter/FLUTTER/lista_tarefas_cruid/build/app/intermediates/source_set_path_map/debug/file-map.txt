@@ -1,0 +1,12 @@
+br.com.gedocs.gedocs_app-core-1.6.0-0 /home/igor/.gradle/caches/transforms-3/284a410c767ad6c7a2b0ffc8d8d85981/transformed/core-1.6.0/res
+br.com.gedocs.gedocs_app-jetified-window-java-1.0.0-beta04-1 /home/igor/.gradle/caches/transforms-3/2a215381204751055df81b6269e717b7/transformed/jetified-window-java-1.0.0-beta04/res
+br.com.gedocs.gedocs_app-jetified-annotation-experimental-1.1.0-2 /home/igor/.gradle/caches/transforms-3/3d2f03fc996c2e0aa3dee5cfa3002cd1/transformed/jetified-annotation-experimental-1.1.0/res
+br.com.gedocs.gedocs_app-jetified-window-1.0.0-beta04-3 /home/igor/.gradle/caches/transforms-3/f302e75fb7efd781bcf1a29281c188da/transformed/jetified-window-1.0.0-beta04/res
+br.com.gedocs.gedocs_app-debug-4 /home/igor/Documentos/projetos/gedocs_app/android/app/src/debug/res
+br.com.gedocs.gedocs_app-main-5 /home/igor/Documentos/projetos/gedocs_app/android/app/src/main/res
+br.com.gedocs.gedocs_app-pngs-6 /home/igor/Documentos/projetos/gedocs_app/build/app/generated/res/pngs/debug
+br.com.gedocs.gedocs_app-resValues-7 /home/igor/Documentos/projetos/gedocs_app/build/app/generated/res/resValues/debug
+br.com.gedocs.gedocs_app-rs-8 /home/igor/Documentos/projetos/gedocs_app/build/app/generated/res/rs/debug
+br.com.gedocs.gedocs_app-mergeDebugResources-9 /home/igor/Documentos/projetos/gedocs_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir
+br.com.gedocs.gedocs_app-mergeDebugResources-10 /home/igor/Documentos/projetos/gedocs_app/build/app/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+br.com.gedocs.gedocs_app-merged_res-11 /home/igor/Documentos/projetos/gedocs_app/build/app/intermediates/merged_res/debug
